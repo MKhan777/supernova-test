@@ -2,18 +2,15 @@
   font-family: sofiapro;
   src: url(../SofiaProRegular.ttf);
 }
+
 .product-slide-block {
   padding: 15px 0;
   max-width: 1365px;
-  margin: auto;
   .container {
     overflow: hidden;
     .product {
-      text-align: center;
-      position: relative;
       padding-top: 13px;
       .rounded-icon {
-        position: absolute;
         right: -10px;
         top: 0;
       }
@@ -29,9 +26,6 @@
           line-height: 16px;
           margin: 10px 0;
           color: #151515;
-          display: flex;
-          justify-content: center;
-          align-items: center;
           img {
             margin-right: 5px;
           }
@@ -57,18 +51,18 @@
         }
         button {
           font-family: sofiapro;
-          width: 100%;
           border-radius: 8px;
-          border: none;
           padding: 15px 0;
           background: #f4436c;
           color: #fff;
           font-size: 16px;
-          font-weight: bold;
           line-height: 20px;
         }
       }
     }
+  }
+  .carousel-item:not(.active) {
+    display: none;
   }
   .carousel-control-prev,
   .carousel-control-next {
@@ -76,13 +70,16 @@
     height: 40px;
     background: #fff2f4 !important;
     top: 27% !important;
-    border: none;
   }
   .carousel-control-prev {
     left: 80px !important;
   }
   .carousel-control-next {
     right: 80px !important;
+  }
+  .carousel-inner .carousel-item-right,
+  .carousel-inner .carousel-item-left {
+    transform: translateX(0);
   }
 }
 .shop-now {
@@ -97,14 +94,31 @@
     background: #fff;
     font-size: 16px;
     line-height: 20px;
-    font-weight: bold;
   }
 }
+
 @media screen and (min-width: 768px) {
   .carousel-inner {
     width: 1490px !important;
     left: 50%;
     margin-left: -740px;
+  }
+  .carousel-inner .carousel-item-right.active,
+  .carousel-inner .carousel-item-next {
+    transform: translateX(25%);
+    -webkit-transform: translateX(25%);
+    -moz-transform: translateX(25%);
+    -ms-transform: translateX(25%);
+    -o-transform: translateX(25%);
+  }
+
+  .carousel-inner .carousel-item-left.active,
+  .carousel-inner .carousel-item-prev {
+    transform: translateX(-25%);
+    -webkit-transform: translateX(-25%);
+    -moz-transform: translateX(-25%);
+    -ms-transform: translateX(-25%);
+    -o-transform: translateX(-25%);
   }
 }
 @media screen and (max-width: 767px) {
@@ -148,5 +162,22 @@
   }
   .shop-now {
     padding-top: 5px;
+  }
+  .carousel-inner .carousel-item-right.active,
+  .carousel-inner .carousel-item-next {
+    transform: translateX(40%);
+    -webkit-transform: translateX(40%);
+    -moz-transform: translateX(40%);
+    -ms-transform: translateX(40%);
+    -o-transform: translateX(40%);
+  }
+
+  .carousel-inner .carousel-item-left.active,
+  .carousel-inner .carousel-item-prev {
+    transform: translateX(-40%);
+    -webkit-transform: translateX(-40%);
+    -moz-transform: translateX(-40%);
+    -ms-transform: translateX(-40%);
+    -o-transform: translateX(-40%);
   }
 }
